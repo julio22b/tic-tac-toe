@@ -12,24 +12,26 @@
 <body>
     <H1>Tic-tac-toe</H1>
     <div class="players">
-        <p aria-placeholder="Player 1" class="player1">Player 1 is X</p>
-        <p aria-placeholder="Player 2" class="player2">Player 2 is O</p>
+        <label>Enter player names</label>
+    <input autofocus autocomplete="off" type="text" placeholder="Blue is X" id="player1"> 
+    <input autofocus autocomplete="off" type="text" placeholder="Red is O"  id="player2"> 
     </div>
     <div class="container">
-        <div></div>
-        <div class="vertical-border"></div>
-        <div></div>
-        <div class="horizontal-border"></div>
-        <div class="vertical-border horizontal-border"></div>
-        <div class="horizontal-border"></div>
-        <div></div>
-        <div class="vertical-border"></div>
-        <div></div>
+        <div id="0" class="cell"></div>
+        <div id="1" class="vertical-border cell"></div>
+        <div id="2" class="cell"></div>
+        <div id="3" class="horizontal-border cell"></div>
+        <div id="4" class="vertical-border horizontal-border cell"></div>
+        <div id="5" class="horizontal-border cell"></div>
+        <div id="6" class="cell"></div>
+        <div id="7" class="vertical-border cell"></div>
+        <div id="8" class="cell"></div>
     </div>
     <div class="buttons">
-            <button>New Game</button>
-            <button>Reset Game</button>
-        </div>
-    <script href="./script.js"></script>
+            <button id="new-game">New Game</button>
+            <button id="reset-game">Reset Game</button>
+    </div>
+    <script src="./script.js"></script>
+    
 </body>
 </html>
