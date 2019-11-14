@@ -6,6 +6,7 @@ const Player = (name, symbol) => {
 }
 
 let startBoard = [0,1,2,3,4,5,6,7,8]
+let player = 0
 
 const startGame = () => {
     const header = document.getElementById('header')
@@ -29,7 +30,7 @@ const startGame = () => {
     document.getElementById('player2').style.fontWeight = 'normal'
 
     const cells = document.getElementsByClassName('cell')
-    let player = playerX
+    player = playerX
     console.log(`next player is ${player.symbol}`)
     console.log(`player x's name is ${playerX.getName()}`)
     console.log(`player o's name is ${playerO.getName()}`)
@@ -40,9 +41,9 @@ const startGame = () => {
             if(header.textContent.includes('wins') || header.textContent.includes('draw') || e.target.textContent){
                 return cells[i].removeEventListener('click', playerTurn)
             } else if(!e.target.textContent && player === playerX){
-                e.target.textContent = player.symbol
+                e.target.textContent = playerX.symbol
                 e.target.style.color = `rgba(${0}, ${0}, ${134}, ${0.75})`
-                startBoard[e.target.id] = player.symbol
+                startBoard[e.target.id] = playerX.symbol
                 document.getElementById('player2').style.transform = 'scale(1.1)'
                 document.getElementById('player2').style.fontWeight = 'bold'
                 document.getElementById('player1').style.transform = 'scale(1)'
@@ -54,9 +55,9 @@ const startGame = () => {
                 
                 console.log(startBoard)
             } else if (!e.target.textContent && player === playerO){
-                e.target.textContent = player.symbol
+                e.target.textContent = playerO.symbol
                 e.target.style.color = `rgba(${134}, ${0}, ${0}, ${0.75})`
-                startBoard[e.target.id] = player.symbol
+                startBoard[e.target.id] = playerO.symbol
                 document.getElementById('player1').style.transform = 'scale(1.1)'
                 document.getElementById('player1').style.fontWeight = 'bold'
                 document.getElementById('player2').style.transform = 'scale(1)'
